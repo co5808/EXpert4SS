@@ -6,6 +6,7 @@ path = '.\\Case\\Case_ANSI.txt'
 def RuleRead(path):
     lossList = {}
     rules = []
+    goal = []
     try:
         with open(path, 'r') as f:
         #with codecs.open(path, 'r', "utf-8") as f:
@@ -25,6 +26,9 @@ def RuleRead(path):
             factName, factList = line[1:].split('=')
             lossList[factName.split(' ')[0]].extend(factList.strip().split(' '))
 
+        if line.startwith('-'):
+            goal.extend(line[1:].strip().split(" "))
+
         if line[:2] == "--":
             print("Input Rules")
 
@@ -35,7 +39,8 @@ def RuleRead(path):
             current['LHS'] = sides[0].strip()
             current['RHS'] = sides[1].replace('\\n', '\n')
             rules.append(current)
-    return lossList, rules
+            
+    return lossList, rules, goal
 
 
 test = RuleRead(path)
