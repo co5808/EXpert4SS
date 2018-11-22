@@ -1,4 +1,4 @@
-import parser
+import RuleParser
 
 def main():
     lossList = {}   #case 별 처리를 위한 장치 목록
@@ -10,7 +10,7 @@ def main():
         # if ~ then : Rule
         # '/' : goal 지정
 
-    lostList, rules, goal = parser.RuleRead('\\Case\\Case1.txt')
+    lostList, rules, goal = RuleParser.RuleRead('\\Case\\Case1.txt')
 
 
 if __name__ == '__main__':
