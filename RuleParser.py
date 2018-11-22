@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 #import codecs      #인코딩이 utf-8로 되어있을 때 사용되는 라이브러리
 
-path = '.\\Case\\Case_ANSI.txt'
+#path = '.\\Case\\Case_ANSI.txt'
 
 def RuleRead(path):
     lossList = {}
@@ -24,7 +24,7 @@ def RuleRead(path):
 
         if line.startswith('+'):
             factName, factList = line[1:].split('=')
-            lossList[factName.split(' ')[0]].extend(factList.strip().split(' '))
+            lossList[factName.strip()].extend(factList.strip().split(' '))
 
         if line.startswith('-'):
             goal.extend(line[1:].strip().split(" "))
@@ -42,5 +42,3 @@ def RuleRead(path):
             
     return lossList, rules, goal
 
-
-test = RuleRead(path)

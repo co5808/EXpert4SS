@@ -10,7 +10,7 @@ def main():
         # if ~ then : Rule
         # '/' : goal 지정
 
-    lostList, rules, goal = RuleParser.RuleRead('\\Case\\Case1.txt')
+    lostList, rules, goal = RuleParser.RuleRead('.\\Case\\Case_ANSI.txt')
 
 
 if __name__ == '__main__':
