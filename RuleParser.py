@@ -26,7 +26,7 @@ def RuleRead(path):
             factName, factList = line[1:].split('=')
             lossList[factName.split(' ')[0]].extend(factList.strip().split(' '))
 
-        if line.startwith('-'):
+        if line.startswith('-'):
             goal.extend(line[1:].strip().split(" "))
 
         if line[:2] == "--":
